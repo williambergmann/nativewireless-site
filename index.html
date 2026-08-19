@@ -3,38 +3,109 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Native Wireless App Privacy &amp; Support</title>
+<title>Native Wireless</title>
+<meta name="description" content="Native Wireless LLC builds iOS utilities that do one job well, cost one price, and collect none of your data.">
 <style>
-  :root { color-scheme: light dark; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    line-height: 1.6; max-width: 44rem; margin: 0 auto; padding: 2rem 1.25rem 4rem;
-    color: #1d1d1f; background: #fff;
-  }
+  :root { color-scheme: light dark;
+    --ink:#1d1d1f; --bg:#fff; --quiet:#6e6e73; --line:#d9d9de; --card:#f5f5f7; --accent:#3a7bd5; }
   @media (prefers-color-scheme: dark) {
-    body { color: #f5f5f7; background: #111; }
-    a { color: #6cb4ff; }
-    table, th, td { border-color: #444 !important; }
-    .quiet { color: #9a9aa0 !important; }
+    :root { --ink:#f5f5f7; --bg:#101014; --quiet:#9a9aa0; --line:#333; --card:#1a1a20; --accent:#6cb4ff; }
   }
-  h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
-  h2 { font-size: 1.25rem; margin-top: 2.5rem; border-bottom: 1px solid #ccc; padding-bottom: 0.3rem; }
-  h3 { font-size: 1.05rem; margin-top: 1.5rem; }
-  .quiet { color: #6e6e73; font-size: 0.95rem; }
-  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
-  th, td { border: 1px solid #ccc; padding: 0.45rem 0.6rem; text-align: left; vertical-align: top; }
-  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; }
+  * { box-sizing:border-box }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    line-height:1.6; margin:0; color:var(--ink); background:var(--bg); }
+  a { color:var(--accent) }
+  .wrap { max-width:52rem; margin:0 auto; padding:0 1.25rem }
+  nav { position:sticky; top:0; z-index:9; backdrop-filter:blur(14px);
+    background:color-mix(in srgb, var(--bg) 78%, transparent); border-bottom:1px solid var(--line) }
+  nav .wrap { display:flex; align-items:center; gap:1.1rem; padding:0.7rem 1.25rem; flex-wrap:wrap }
+  nav .brand { font-weight:700; letter-spacing:0.01em; color:var(--ink); text-decoration:none; margin-right:auto }
+  nav a.item { color:var(--quiet); text-decoration:none; font-size:0.95rem }
+  nav a.item:hover { color:var(--ink) }
+  .hero { position:relative; overflow:hidden; background:#12101c }
+  .hero svg { display:block; width:100%; height:340px }
+  .hero .inner { position:absolute; inset:0; display:flex; flex-direction:column;
+    justify-content:center; }
+  .hero h1 { color:#fff; font-size:clamp(1.7rem,4.5vw,2.6rem); margin:0 0 0.5rem; max-width:30ch;
+    text-shadow:0 1px 14px rgba(0,0,0,.35) }
+  .hero p { color:#e8e6f2; margin:0; max-width:52ch; text-shadow:0 1px 10px rgba(0,0,0,.4) }
+  h2 { font-size:1.3rem; margin-top:3rem; border-bottom:1px solid var(--line); padding-bottom:0.3rem }
+  h3 { font-size:1.05rem; margin-top:1.5rem }
+  .quiet { color:var(--quiet); font-size:0.95rem }
+  table { border-collapse:collapse; width:100%; margin:1rem 0; font-size:0.95rem }
+  th,td { border:1px solid var(--line); padding:0.45rem 0.6rem; text-align:left; vertical-align:top }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(15rem,1fr)); gap:0.9rem; margin:1.2rem 0 }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:0.95rem 1rem }
+  .chip { width:2.1rem; height:2.1rem; border-radius:9px; margin-bottom:0.55rem }
+  .card b { display:block; margin-bottom:0.15rem }
+  .card p { margin:0; font-size:0.92rem; color:var(--quiet) }
+  footer { border-top:1px solid var(--line); margin-top:3.5rem; padding:1.6rem 0 2.6rem }
 </style>
 </head>
 <body>
 
-<h1>Native Wireless LLC</h1>
-<p class="quiet">A New Mexico software company building iOS utilities. We make measurement, documents,
-and personal-data tools that do one job well, priced once, with no subscriptions.</p>
-<p class="quiet">Contact: <a href="mailto:will@nativewireless.org">will@nativewireless.org</a></p>
-<hr>
-<p class="quiet">Privacy policy and support for every app we publish on the App Store.
-Seller: Native Wireless LLC. Last updated: August 16, 2026.</p>
+<nav><div class="wrap">
+  <a class="brand" href="#top">Native Wireless</a>
+  <a class="item" href="#apps">Apps</a>
+  <a class="item" href="#about">About</a>
+  <a class="item" href="#privacy">Privacy</a>
+  <a class="item" href="#support">Support</a>
+  <a class="item" href="#contact">Contact</a>
+</div></nav>
+
+<header class="hero" id="top">
+  <svg viewBox="0 0 1200 340" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <rect width="1200" height="340" fill="#12101c"/>
+    <g filter="url(#b)">
+      <ellipse cx="180" cy="300" rx="420" ry="230" fill="#8b7ce8" opacity="0.85"/>
+      <ellipse cx="640" cy="360" rx="460" ry="240" fill="#2bbfa4" opacity="0.8"/>
+      <ellipse cx="1080" cy="290" rx="400" ry="220" fill="#5a8fe0" opacity="0.75"/>
+      <ellipse cx="360" cy="400" rx="300" ry="160" fill="#cfe86b" opacity="0.55"/>
+    </g>
+    <defs><filter id="b" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="70"/></filter></defs>
+  </svg>
+  <div class="inner"><div class="wrap">
+    <h1>Software that does one job well.</h1>
+    <p>We are a small New Mexico company making iOS utilities. Each app is free to try,
+    costs one price to own, and collects none of your data.</p>
+  </div></div>
+</header>
+
+<main class="wrap">
+
+<h2 id="apps">The apps</h2>
+<p>Nine apps are on their way to the App Store, and every one of them follows the same promise.
+You pay once, you own it, and your data stays yours.</p>
+
+<div class="grid">
+  <div class="card"><div class="chip" style="background:linear-gradient(135deg,#60c8ff,#9682ff)"></div>
+    <b>NoiseDocket</b><p>It measures sound levels and builds dated PDF noise reports you can hand to someone.</p></div>
+  <div class="card"><div class="chip" style="background:linear-gradient(135deg,#ff96cd,#8296ff)"></div>
+    <b>DottedLine</b><p>It signs and fills PDFs right on your phone.</p></div>
+  <div class="card"><div class="chip" style="background:linear-gradient(135deg,#ffaf5a,#ff6996)"></div>
+    <b>PDFBench</b><p>It merges and compresses PDFs entirely on your device.</p></div>
+  <div class="card"><div class="chip" style="background:linear-gradient(135deg,#ff876e,#ffc878)"></div>
+    <b>OdoBook</b><p>It keeps your car's service history in your hands.</p></div>
+  <div class="card"><div class="chip" style="background:linear-gradient(135deg,#ff78a5,#be82ff)"></div>
+    <b>ChoreDeck</b><p>It runs a family chore chart with a printable reward chart.</p></div>
+  <div class="card"><div class="chip" style="background:linear-gradient(135deg,#5ae1c3,#6ea5ff)"></div>
+    <b>EveryRoom</b><p>It catalogs your home inventory so an insurance claim starts from facts.</p></div>
+  <div class="card"><div class="chip" style="background:linear-gradient(135deg,#ffc35f,#5fcdeb)"></div>
+    <b>TripPacker</b><p>It builds packing lists you can reuse for every trip.</p></div>
+  <div class="card"><div class="chip" style="background:linear-gradient(135deg,#78e696,#fadc6e)"></div>
+    <b>StrideReport</b><p>It turns Apple Health walking data into clear, honest reports.</p></div>
+  <div class="card"><div class="chip" style="background:linear-gradient(135deg,#ff699b,#9173fa)"></div>
+    <b>PulseTrend</b><p>It charts heart trends from the years of data your Apple Watch already keeps.</p></div>
+</div>
+<p class="quiet">Apps listed here may still be in development. Each one is covered by the privacy
+policy below from the day it ships.</p>
+
+<h2 id="about">About</h2>
+<p>Native Wireless LLC is a software company in New Mexico, formed in 2021. We build small
+utilities that respect the person using them. Each app does a single job, works without an
+account, and never phones home. We charge one price because software we built once is not a
+service you should have to rent.</p>
 
 <h2 id="privacy">Privacy policy</h2>
 
@@ -123,7 +194,14 @@ If Apple's process leaves you stuck, email us anyway and we will do what we can.
 <p>On your device (see the privacy policy above). Deleting an app deletes its data, so export
 anything you want to keep first.</p>
 
-<p class="quiet" style="margin-top:3rem">Native Wireless LLC</p>
+<h2 id="contact">Contact</h2>
+<p>Email <a href="mailto:will@nativewireless.org"><strong>will@nativewireless.org</strong></a>
+and a human will reply. If you are writing about an app, include the app name and tell us what
+you expected to happen.</p>
 
+</main>
+<footer><div class="wrap">
+  <p class="quiet">Native Wireless LLC · New Mexico · Last updated August 19, 2026.</p>
+</div></footer>
 </body>
 </html>
